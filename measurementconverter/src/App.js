@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import logo from "./logo.svg";
 import "./App.css";
@@ -14,16 +14,19 @@ import Weight from "./components/dashboard/Weight";
 function App() {
   return (
     <Fragment>
-      <Menu />
-      <Route exact path="/" component={Container} />
+      {/* <Menu /> */}
+
       <section>
         <Sidebar />
         {/* <Container /> */}
-        <Route exact path="/length" component={Length} />
-        <Route exact path="/temperature" component={Temperature} />
-        <Route exact path="/volume" component={Volume} />
-        <Route exact path="/weight" component={Weight} />
-        {/* <Route exact path="/length" component={Length} /> */}
+        <switch>
+          <Route exact path="/" component={Container} />
+          <Route exact path="/length" component={Length} />
+          <Route exact path="/temperature" component={Temperature} />
+          <Route exact path="/volume" component={Volume} />
+          <Route exact path="/weight" component={Weight} />
+          {/* <Route exact path="/length" component={Length} /> */}
+        </switch>
       </section>
     </Fragment>
     // <div className="App">
